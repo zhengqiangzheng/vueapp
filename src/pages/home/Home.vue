@@ -1,18 +1,19 @@
 <template>
-
+  <div>
     <home-Header></home-Header>
-    <!--<router-link to="/list">hahahhss</router-link>-->
-
-
+    <home-Swiper></home-Swiper>
+  </div>
 </template>
 
 <script>
   import HomeHeader from './components/Header'
+  import HomeSwiper from './components/Swiper'
 
   export default {
     name: 'Home',
     components: {
-      HomeHeader
+      HomeHeader,
+      HomeSwiper
     }
   }
 </script>
