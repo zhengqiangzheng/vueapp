@@ -17,60 +17,21 @@
 <script>
   export default {
     name: 'HomeIcons',
-    data(){
-        return{
-    swiperOption:{
-      loop:true
+    props:{
+      list :Array
 
     },
-      iconList:  [
-        {
-          id:'1',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc:'热门景点'
-
-        },{
-          id:'2',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          desc:'一日游'
-        },{
-          id:'3',
-          imgUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/3ef092d0a89ffddb7f781cda30c8ae49.png',
-          desc:'上海上海'
-        },{
-          id:'4',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/f5/c4c9d9830404e602.png',
-          desc:'室内娱乐'
-        },{
-          id:'5',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-          desc:'辰山植物园'
-        },{
-          id:'6',
-          imgUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/209908a8fc21779b485ab05f01835eaa.png',
-          desc:'浦江郊野公园'
-        },{
-          id:'7',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/de/f26be47a6bf02a02.png',
-          desc:'上海野生'
-        },{
-          id:'8',
-          imgUrl:'https://img1.qunarzz.com/piao/fusion/1810/50/26ffa31b56646402.png',
-          desc:'上海海昌'
-        },{
-          id:'9',
-          imgUrl:'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          desc:'上海海昌'
+    data() {
+      return {
+        swiperOption: {
+          autoplay:false
         }
-
-          ]
-
-        }
+      }
     },
     computed:{
       pages (){
         const pages = [];
-        this.iconList.forEach((item,index)=>{
+        this.list.forEach((item,index)=>{
           const page = Math.floor(index / 8);
           if (!pages[page]) {
             pages[page]=[]
